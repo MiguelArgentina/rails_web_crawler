@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2022_01_13_212742) do
   enable_extension "plpgsql"
 
   create_table "epa_products", force: :cascade do |t|
+    t.string "name"
     t.string "epa_code"
     t.string "price"
     t.json "product_info", default: {}

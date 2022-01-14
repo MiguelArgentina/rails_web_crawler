@@ -10,8 +10,9 @@
   <thead>
     <tr>
       <th>EPA Code</th>
+      <th>Name</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -19,11 +20,16 @@
     <% @epa_products.each do |epa_product| %>
       <tr>
         <td><%= epa_product.epa_code %></td>
+        <td><%= epa_product.name.first(50) %></td>
         <td><%= epa_product.price %></td>
        
-        <td><%= link_to 'Show', epa_product %></td>
-        <td><%= link_to 'Edit', edit_epa_product_path(epa_product) %></td>
-        <td><%= link_to 'Destroy', epa_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <span class="badge bg-primary">
+            <%= link_to epa_product, class:"text-white text-decoration-none" do %>
+              Show
+            <% end %>
+          </span>
+        </td>
       </tr>
     <% end %>
   </tbody>
