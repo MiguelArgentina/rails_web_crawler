@@ -1,0 +1,2 @@
+module EpaProductsHelper
+end

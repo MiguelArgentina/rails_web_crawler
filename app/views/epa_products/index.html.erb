@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Epa Products</h1>
+
+<br><br>
+<%= button_to 'Scrape', scrape_epa_products_path, class:"btn btn-success" %>
+<br><br>
+
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th>EPA Code</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @epa_products.each do |epa_product| %>
+      <tr>
+        <td><%= epa_product.epa_code %></td>
+        <td><%= epa_product.price %></td>
+       
+        <td><%= link_to 'Show', epa_product %></td>
+        <td><%= link_to 'Edit', edit_epa_product_path(epa_product) %></td>
+        <td><%= link_to 'Destroy', epa_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

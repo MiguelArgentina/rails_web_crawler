@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">EPA Code</th>
+      <th scope="col">Price</th>
+      <th scope="col">Product info</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @epa_product.epa_code %></td>
+        <td><%= @epa_product.price %></td>
+        <td><%= @epa_product.product_info %></td>
+      </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Back', root_path, class:"btn btn-secondary text-white" %>
